@@ -2371,21 +2371,21 @@ limitations under the License.
     <!-- type="slides" ensures only one image is visible at a time -->
       <amp-carousel [slide]="selectedSlide" on="slideChange:AMP.setState({selectedSlide:event.index})" type="slides" id="imageSlides" layout="responsive" width="1080" height="720">
 
-
         <!-- layout="fill" fills its size with the child element-->
-        <amp-img src="https://unsplash.it/1080/720?image=1037" layout="fill"></amp-img>
-        <amp-img src="https://unsplash.it/1080/720?image=1038" layout="fill"></amp-img>
-        <amp-img src="https://unsplash.it/1080/720?image=1039" layout="fill"></amp-img>
-        <amp-img src="https://unsplash.it/1080/720?image=1040" layout="fill"></amp-img>
-        <amp-img src="https://unsplash.it/1080/720?image=1041" layout="fill"></amp-img>
-        <amp-img src="https://unsplash.it/1080/720?image=1042" layout="fill"></amp-img>
-        <amp-img src="https://unsplash.it/1080/720?image=1043" layout="fill"></amp-img>
-        <amp-img src="https://unsplash.it/1080/720?image=1044" layout="fill"></amp-img>
+          <amp-img src="https://unsplash.it/1080/720?image=1037" layout="fill"></amp-img>
+          <amp-img src="https://unsplash.it/1080/720?image=1038" layout="fill"></amp-img>
+          <amp-img src="https://unsplash.it/1080/720?image=1039" layout="fill"></amp-img>
+          <amp-img src="https://unsplash.it/1080/720?image=1040" layout="fill"></amp-img>
+          <amp-img src="https://unsplash.it/1080/720?image=1041" layout="fill"></amp-img>
+          <amp-img src="https://unsplash.it/1080/720?image=1042" layout="fill"></amp-img>
+          <amp-img src="https://unsplash.it/1080/720?image=1043" layout="fill"></amp-img>
+          <amp-img src="https://unsplash.it/1080/720?image=1044" layout="fill"></amp-img>
     </amp-carousel>
   <!--End photo carousel-->
 
   <!--Start thumbnails carousel, wrapped in amp-selector -->
   <amp-selector [selected]="selectedSlide" on="select:AMP.setState({selectedSlide:event.targetOption})">
+
 
     <amp-carousel layout="fixed-height" height="78" class="mt1">
       
@@ -2393,19 +2393,18 @@ limitations under the License.
         use on="tap" event handler to change photo displayed
         ARIA role for accessibility-->
       <amp-img option=0 selected src="https://unsplash.it/108/72?image=1037" layout="fixed" width="108" height="72"></amp-img>
-    <amp-img option=1 src="https://unsplash.it/108/72?image=1038" layout="fixed" width="108" height="72"></amp-img>
-    <amp-img option=2 src="https://unsplash.it/108/72?image=1039" layout="fixed" width="108" height="72"></amp-img>
-    <amp-img option=3 src="https://unsplash.it/108/72?image=1040" layout="fixed" width="108" height="72"></amp-img>
-    <amp-img option=4 src="https://unsplash.it/108/72?image=1041" layout="fixed" width="108" height="72"></amp-img>
-    <amp-img option=5 src="https://unsplash.it/108/72?image=1042" layout="fixed" width="108" height="72"></amp-img>
-    <amp-img option=6 src="https://unsplash.it/108/72?image=1043" layout="fixed" width="108" height="72"></amp-img>
-    <amp-img option=7 src="https://unsplash.it/108/72?image=1044" layout="fixed" width="108" height="72"></amp-img>
+      <amp-img option=1 src="https://unsplash.it/108/72?image=1038" layout="fixed" width="108" height="72"></amp-img>
+      <amp-img option=2 src="https://unsplash.it/108/72?image=1039" layout="fixed" width="108" height="72"></amp-img>
+      <amp-img option=3 src="https://unsplash.it/108/72?image=1040" layout="fixed" width="108" height="72"></amp-img>
+      <amp-img option=4 src="https://unsplash.it/108/72?image=1041" layout="fixed" width="108" height="72"></amp-img>
+      <amp-img option=5 src="https://unsplash.it/108/72?image=1042" layout="fixed" width="108" height="72"></amp-img>
+      <amp-img option=6 src="https://unsplash.it/108/72?image=1043" layout="fixed" width="108" height="72"></amp-img>
+      <amp-img option=7 src="https://unsplash.it/108/72?image=1044" layout="fixed" width="108" height="72"></amp-img>
 
     </amp-carousel>
   </amp-selector>
   <!--End thumbnails carousel-->
   
-
 </body>
 
 </html>
