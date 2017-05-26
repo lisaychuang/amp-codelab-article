@@ -86,6 +86,7 @@ limitations under the License.
   <script custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js" async=""></script>
   <script custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async=""></script>
   <script custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js" async></script>
+  <!--EXPERIMENTAL FEATURE--><script custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js" async></script>
 
   <style amp-custom="">
     /*! Bassplate | MIT License | http://github.com/basscss/bassplate */
@@ -2368,9 +2369,8 @@ limitations under the License.
     <p class="my2 px3">Vivamus viverra augue libero, vitae dapibus lectus accumsan eget. Pellentesque eget ipsum purus. Maecenas leo odio, ornare nec ex id, suscipit porta ipsum. Ut fringilla semper cursus.</p>
 
     <!-- type="slides" ensures only one image is visible at a time -->
-    <amp-carousel id="imageSlides"
-      layout="responsive" width="1080" height="720"
-      type="slides">
+      <amp-carousel [slide]="selectedSlide" on="slideChange:AMP.setState({selectedSlide:event.index})" type="slides" id="imageSlides" layout="responsive" width="1080" height="720">
+
 
         <!-- layout="fill" fills its size with the child element-->
         <amp-img src="https://unsplash.it/1080/720?image=1037" layout="fill"></amp-img>
@@ -2385,20 +2385,21 @@ limitations under the License.
   <!--End photo carousel-->
 
   <!--Start thumbnails carousel, wrapped in amp-selector -->
-  <amp-selector>
+  <amp-selector [selected]="selectedSlide" on="select:AMP.setState({selectedSlide:event.targetOption})">
+
     <amp-carousel layout="fixed-height" height="78" class="mt1">
       
        <!-- layout="fixed" & low resolution imgs 
         use on="tap" event handler to change photo displayed
         ARIA role for accessibility-->
-      <amp-img option=0 selected on="tap:imageSlides.goToSlide(index=0)" role="button" tabindex="1" layout="fixed" src="https://unsplash.it/108/72?image=1037" layout="fixed" width="108" height="72"></amp-img>
-      <amp-img option=1 on="tap:imageSlides.goToSlide(index=1)" role="button" tabindex="1" layout="fixed" src="https://unsplash.it/108/72?image=1038" layout="fixed" width="108" height="72"></amp-img>
-      <amp-img option=2 on="tap:imageSlides.goToSlide(index=2)" role="button" tabindex="1" layout="fixed" src="https://unsplash.it/108/72?image=1039" layout="fixed" width="108" height="72"></amp-img>
-      <amp-img option=3 on="tap:imageSlides.goToSlide(index=3)" role="button" tabindex="1" layout="fixed" src="https://unsplash.it/108/72?image=1040" layout="fixed" width="108" height="72"></amp-img>
-      <amp-img option=4 on="tap:imageSlides.goToSlide(index=4)" role="button" tabindex="1" layout="fixed" src="https://unsplash.it/108/72?image=1041" layout="fixed" width="108" height="72"></amp-img>
-      <amp-img option=5 on="tap:imageSlides.goToSlide(index=5)" role="button" tabindex="1" layout="fixed" src="https://unsplash.it/108/72?image=1042" layout="fixed" width="108" height="72"></amp-img>
-      <amp-img option=6 on="tap:imageSlides.goToSlide(index=6)" role="button" tabindex="1" layout="fixed" src="https://unsplash.it/108/72?image=1043" layout="fixed" width="108" height="72"></amp-img>
-      <amp-img option=7 on="tap:imageSlides.goToSlide(index=7)" role="button" tabindex="1" layout="fixed" src="https://unsplash.it/108/72?image=1044" layout="fixed" width="108" height="72"></amp-img>
+      <amp-img option=0 selected src="https://unsplash.it/108/72?image=1037" layout="fixed" width="108" height="72"></amp-img>
+    <amp-img option=1 src="https://unsplash.it/108/72?image=1038" layout="fixed" width="108" height="72"></amp-img>
+    <amp-img option=2 src="https://unsplash.it/108/72?image=1039" layout="fixed" width="108" height="72"></amp-img>
+    <amp-img option=3 src="https://unsplash.it/108/72?image=1040" layout="fixed" width="108" height="72"></amp-img>
+    <amp-img option=4 src="https://unsplash.it/108/72?image=1041" layout="fixed" width="108" height="72"></amp-img>
+    <amp-img option=5 src="https://unsplash.it/108/72?image=1042" layout="fixed" width="108" height="72"></amp-img>
+    <amp-img option=6 src="https://unsplash.it/108/72?image=1043" layout="fixed" width="108" height="72"></amp-img>
+    <amp-img option=7 src="https://unsplash.it/108/72?image=1044" layout="fixed" width="108" height="72"></amp-img>
 
     </amp-carousel>
   </amp-selector>
