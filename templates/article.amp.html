@@ -2375,7 +2375,9 @@ limitations under the License.
   <!--Start thumbnails carousel-->
     <amp-carousel layout="fixed-height" height="78" class="mt1">
       
-       <!-- layout="fixed" & low resolution imgs -->
+       <!-- layout="fixed" & low resolution imgs 
+        use on="tap" event handler to change photo displayed
+        ARIA role for accessibility-->
       <amp-img on="tap:imageSlides.goToSlide(index=0)" role="button" tabindex="1" layout="fixed" src="https://unsplash.it/108/72?image=1037" layout="fixed" width="108" height="72"></amp-img>
       <amp-img on="tap:imageSlides.goToSlide(index=1)" role="button" tabindex="1" layout="fixed" src="https://unsplash.it/108/72?image=1038" layout="fixed" width="108" height="72"></amp-img>
       <amp-img on="tap:imageSlides.goToSlide(index=2)" role="button" tabindex="1" layout="fixed" src="https://unsplash.it/108/72?image=1039" layout="fixed" width="108" height="72"></amp-img>
